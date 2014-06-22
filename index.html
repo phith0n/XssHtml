@@ -72,7 +72,7 @@ $html = $xss-&gt;getHtml();
 </code></pre>
 
 <p>构造函数接受三个参数：
-new XssHtml(\$html, \$charset, \$allow_tag)</p>
+new XssHtml($html, $charset, $allow_tag)</p>
 
 <blockquote>
 <p><strong>html</strong> &lt; string &gt; 待过滤的HTML代码<br><strong>charset</strong> &lt; string &gt; 编码，默认为utf-8<br><strong>allow_tag</strong> &lt; array &gt; 允许的标签组成的数组，默认为array('a', 'img', 'br', 'strong', 'b', 'code', 'pre', 'p', 'div', 'em', 'span', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'table', 'ul', 'ol', 'tr', 'th', 'td', 'hr', 'li', 'u')</p>
@@ -83,8 +83,7 @@ new XssHtml(\$html, \$charset, \$allow_tag)</p>
 <h3>
 <a name="demo" class="anchor" href="#demo"><span class="octicon octicon-link"></span></a>Demo</h3>
 
-<p>可在此处进行测试，希望能发现问题并报告~
-<a href="http://xsshtml.leavesongs.com/">http://xsshtml.leavesongs.com/</a></p>
+<p>可在此处进行测试，希望能发现问题并报告~<br><a href="http://xsshtml.leavesongs.com/">http://xsshtml.leavesongs.com/</a></p>
 
 <h3>
 <a name="update-log" class="anchor" href="#update-log"><span class="octicon octicon-link"></span></a>Update Log</h3>
