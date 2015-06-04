@@ -50,7 +50,7 @@ class XssHtml {
 			$this->m_ok = FALSE;
 			return ;
 		}
-		$this->m_xss = "<meta http-equiv=\"Content-Type\" content=\"text/html;charset={$charset}\">" . $this->m_xss;
+		$this->m_xss = "<meta http-equiv=\"Content-Type\" content=\"text/html;charset={$charset}\"><nouse>" . $this->m_xss . "</nouse>";
 		$this->m_dom = new DOMDocument();
 		$this->m_dom->strictErrorChecking = FALSE;
 		$this->m_ok = @$this->m_dom->loadHTML($this->m_xss);
@@ -176,4 +176,10 @@ class XssHtml {
 	}
 }
 
+// if(php_sapi_name() == "cli"){
+// 	$html = $argv[1];
+// 	$xss = new XssHtml($html);
+// 	$html = $xss->getHtml();
+// 	echo $html;
+// }
 ?>
