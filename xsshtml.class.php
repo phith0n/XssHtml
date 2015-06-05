@@ -75,7 +75,9 @@ class XssHtml {
 				}
 			}
 		}
-		return strip_tags($this->m_dom->saveHTML(), '<' . implode('><', $this->m_AllowTag) . '>');
+		$html = strip_tags($this->m_dom->saveHTML(), '<' . implode('><', $this->m_AllowTag) . '>');
+		$html = preg_replace('/^\n(.*)\n$/s', '$1', $html);
+		return $html;
 	}
 
 	private function __true_url($url){
@@ -180,6 +182,6 @@ class XssHtml {
 // 	$html = $argv[1];
 // 	$xss = new XssHtml($html);
 // 	$html = $xss->getHtml();
-// 	echo $html;
+// 	echo "'$html'";
 // }
 ?>
